@@ -73,7 +73,7 @@ except:
 files=np.concatenate([objectlist,flatlist,caliblist],axis=0)
 
 for i in files:
- print('Extracting File '+ i)   
+ print 'Extracting File '+ i   
  hdu= fits.open(i[:-5]+'_pp.fit')
  scidata=hdu[0].data	 
  xaxis=numpy.linspace(0,4112,4112)
@@ -88,8 +88,8 @@ for i in files:
  try :
 	 resel=hdu[0].header[reseltype]
  except:
-	 print('Failed extracting Resolution from header..')
-	 print('Assuming Low Resolution')
+	 print 'Failed extracting Resolution from header..'
+	 print 'Assuming Low Resolution'
 	 resel='0'
 
  if resel==reselkeylow:
@@ -97,7 +97,7 @@ for i in files:
      content=np.loadtxt(fl)
      a=0
      bar = progressbar.ProgressBar(maxval=len(content), widgets=[progressbar.Bar('=', '[', ']'), ' ', progressbar.Percentage(),' ', progressbar.ETA()])
-     print("Extracting Orders from fiber 1... \n")
+     print  "Extracting Orders from fiber 1... \n"
      bar.start()
      for l in range(content.shape[0]):
 	 
@@ -127,7 +127,7 @@ for i in files:
 	data= numpy.vstack((data,datadummy))
       a=a+1  
      bar.finish()	 
-     print("Extraction Complete. \n")   
+     print  "Extraction Complete. \n"   
      hduOut =fits.PrimaryHDU(data)
      hduOut.header=hdu[0].header
      hduOut.writeto(i[:-5]+'_fiber1_ec.fit',overwrite=True)
@@ -139,7 +139,7 @@ for i in files:
 
      a=0
      bar = progressbar.ProgressBar(maxval=len(content), widgets=[progressbar.Bar('=', '[', ']'), ' ', progressbar.Percentage(),' ', progressbar.ETA()])
-     print("Extracting Orders from fiber 2... \n")
+     print  "Extracting Orders from fiber 2... \n"
      bar.start()
      for l in range(content.shape[0]):
 
@@ -169,7 +169,7 @@ for i in files:
 	data= numpy.vstack((data,datadummy))
       a=a+1  
      bar.finish()	 
-     print("Extraction Complete. \n")   
+     print  "Extraction Complete. \n"   
      plt.show()  
      hduOut =fits.PrimaryHDU(data)
      hduOut.header=hdu[0].header
@@ -182,7 +182,7 @@ for i in files:
      
      a=0
      bar = progressbar.ProgressBar(maxval=len(content), widgets=[progressbar.Bar('=', '[', ']'), ' ', progressbar.Percentage(),' ', progressbar.ETA()])
-     print("Extracting Orders from fiber 1... \n")
+     print  "Extracting Orders from fiber 1... \n"
      bar.start()
      for l in range(content.shape[0]):
 	 
@@ -212,7 +212,7 @@ for i in files:
 	data= numpy.vstack((data,datadummy))
       a=a+1  
      bar.finish()	 
-     print("Extraction Complete. \n")   
+     print  "Extraction Complete. \n"   
      hduOut =fits.PrimaryHDU(data)
      hduOut.header=hdu[0].header
      hduOut.writeto(i[:-5]+'_fiber1_ec.fit',overwrite=True)
@@ -225,7 +225,7 @@ for i in files:
 
      a=0
      bar = progressbar.ProgressBar(maxval=len(content), widgets=[progressbar.Bar('=', '[', ']'), ' ', progressbar.Percentage(),' ', progressbar.ETA()])
-     print("Extracting Orders from fiber 2... \n")
+     print  "Extracting Orders from fiber 2... \n"
      bar.start()
      for l in range(content.shape[0]):
       bar.update(a)
@@ -256,7 +256,7 @@ for i in files:
 	data= numpy.vstack((data,datadummy))
       a=a+1  
      bar.finish()	 
-     print("Extraction Complete. \n")   
+     print  "Extraction Complete. \n"   
      plt.show()  
      hduOut =fits.PrimaryHDU(data)
      hduOut.header=hdu[0].header

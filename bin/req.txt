@@ -1,0 +1,11 @@
+astropy
+progressbar
+configparser
+peakutils
+scipy
+numpy
+matplotlib
+ccdproc
+os 
+os_sys
+pandas
